@@ -1,6 +1,6 @@
 # Big O Notations
 
-Consider an example in which we have two set of code(which does the same operation) written by two different programmers. How would we determine that which code is writtern better or performing better?
+Consider an example in which we have two set of code(which does the same operation) written by two different programmers. How would we determine that which code's performance is better.
 
 Answer is Big O notation. It is the way to mathematically figure out which code would perform better. 
 
