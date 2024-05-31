@@ -4,7 +4,7 @@ A linked list is a linear collection of data elements whose order is not given b
 
 ## Big O
 
-
+Big O for linked list is O(n)
 
 ## Reference
 
