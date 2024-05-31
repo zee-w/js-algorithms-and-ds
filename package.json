@@ -19,9 +19,9 @@
     "author": "zee-w",
     "license": "",
     "homepage": "https://github.com/zee-w/js-algorithms-and-ds",
-    "main": "index.js",
+    "main": "src",
     "scripts": {
-      "run": "node test.js"
+      "test": "node"
     },
     "devDependencies": {
       "@babel/cli": "7.20.7",
