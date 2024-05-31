@@ -13,3 +13,6 @@ Answer is Big O notation. It is the way to mathematically figure out which code 
 
 
 > - Big O always measures the Worst Case 
+
+
+## Cheat Sheet:  https://www.bigocheatsheet.com/
