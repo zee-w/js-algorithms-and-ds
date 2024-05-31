@@ -14,7 +14,9 @@ Answer is Big O notation. It is the way to mathematically figure out which code 
 
 > - Big O always measures the Worst Case 
 
-> - We always drop constants in Big O. e.g. if a code has time complexity of O(2n), we always drop the constant (2 in this case). We say that the Big O is O(n) instead of O(2n)
+> - We always drop constants in Big O, e.g. if a code has time complexity of O(2n), we always drop the constant (2 in this case). We say that the Big O is O(n) instead of O(2n)
+
+> - We also always drop the non dominants in Big O, e.g. O(n^2 + n)  is written as O(n^2)
 
 
-## Cheat Sheet:  https://www.bigocheatsheet.com/
+## Cheat Sheet for Big O:  https://www.bigocheatsheet.com/

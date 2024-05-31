@@ -1,5 +1,5 @@
-// we pass the function number n and it runs n times.  (Proportional)
-// O(n) is always going to be a straght line on a graph. (number of operations are alwasys proportional to whatever n is)
+// No matter the number of inputs, we always find the value on same time.  (Constant Time)
+// O(1) is the most efficeint a code is ever going to be. Its almost a straingt line on the graph.
 
 
 
