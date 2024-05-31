@@ -1,4 +1,4 @@
-// we pass the function number n and it runs n times. 
+// we pass the function number n and it runs n times.  (Proportional)
 // O(n) is always going to be a straght line on a graph. (number of operations are alwasys proportional to whatever n is)
 
 
