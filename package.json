@@ -3,7 +3,6 @@
     "version": "0.0.4",
     "description": "Algorithms and data-structures implemented on JavaScript",
     "repository": {
-      "type": "git",
       "url": "https://github.com/zee-w/js-algorithms-and-ds.git"
     },
     "keywords": [
@@ -19,6 +18,7 @@
     "author": "zee-w",
     "license": "",
     "homepage": "https://github.com/zee-w/js-algorithms-and-ds",
+    "type": "module",
     "main": "src",
     "scripts": {
       "test": "node"
