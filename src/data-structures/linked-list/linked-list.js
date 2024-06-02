@@ -133,6 +133,22 @@ class LinkedList {
         if (this.length===0){
             this.tail=null;
         }
+        return temp;
+
+    }
+
+    get(index){
+        /* get-> gets a node from the a particular
+        index
+        */
+        if(index < 0 || index >= this.length) return undefined;
+
+        let temp = this.head;
+
+        for (let i=0; i< index ; i++){
+            temp =temp.next
+        }
+        return temp;
 
     }
 }
@@ -155,6 +171,8 @@ function test() {
     myLinkedList.shift();
     myLinkedList.shift();
     myLinkedList.shift();
+
+    console.log('Element at index is: '+myLinkedList.get(2).value);
 
     myLinkedList.getHead();
     myLinkedList.getTail();
