@@ -45,7 +45,10 @@ class LinkedList {
 
 
     push(value) {
-        // push is a O(1) operation
+        /* push-> add a new node to the linked list at 
+        the end.
+        push is a O(1) operation 
+        */
         const newNode = new Node(value);
 
         // if the linked list is empty
@@ -61,10 +64,15 @@ class LinkedList {
     }
 
     pop() {
-        // pop is a O(n) operation
+        /* pop-> removed a node from the linked list at 
+        the end.
+        pop is a O(n) operation 
+        */
 
+        // if the list is empty
         if (this.length === 0) return undefined;
 
+        //if there are 2 or more nodes in the list
         let temp = this.head;
         let pre = this.head;
 
@@ -74,7 +82,9 @@ class LinkedList {
         }
         this.tail = pre;
         this.tail.next = null;
-        this.length--
+        this.length--;
+
+        //if there is only one node in the list
         if (this.length === 0) {
             this.head = null;
             this.tail = null;
@@ -83,6 +93,12 @@ class LinkedList {
     }
 
     unshit(value) {
+        /* unsift-> adds a node to the linked list at 
+        the start.
+        unshift is a O(1) operation 
+        */
+
+
         let newNode = new Node(value);
         if (!this.head) {
             this.head = newNode;
@@ -94,6 +110,30 @@ class LinkedList {
         this.length++;
         return this;
         
+    }
+
+    shift(){
+        /* shift-> removes a node from the linked list at 
+        the start.
+        shift is a O(1) operation 
+        */
+
+        // if the list is empty
+        if (this.length === 0) return undefined;
+
+
+        //if there are 2 or more nodes in the list
+        let temp= this.head;
+        this.head = this.head.next;
+
+        temp.next= null;
+        this.length--;
+
+        //if there is only one node in the list
+        if (this.length===0){
+            this.tail=null;
+        }
+
     }
 }
 
@@ -108,7 +148,13 @@ function test() {
     myLinkedList.pop();
     
     myLinkedList.unshit(0);
+    myLinkedList.unshit(-1);
+    myLinkedList.unshit(-2);
+    myLinkedList.unshit(-3);
 
+    myLinkedList.shift();
+    myLinkedList.shift();
+    myLinkedList.shift();
 
     myLinkedList.getHead();
     myLinkedList.getTail();
