@@ -1,4 +1,54 @@
-import Node from './linkedListNode.js'
+/*
+Linked List node is in code form an object which has a value and a next pointer. e.g.
+Consider a Linked List:
+
+H                 T    
+11-> 3-> 23-> 7-> 4-> null
+
+Now how do we represent the node 4 in code? 
+    {
+        value: '4'
+        next: null
+    }
+How would node 3 look in code?
+    {
+        value: '3'
+        next: {
+            value: '23'
+            next: {}
+    }
+    }
+
+
+The whole List could be represented under the hood as:
+{
+head-> {
+    value: '11'
+    next: {
+        value: '3'
+        next: {
+            value: '23'
+            next: {
+                value: '7'
+                next: {
+                    value: '4'       
+                    next: null       -> TAIL
+                } 
+            }
+        }
+    }
+}
+}
+
+*/
+
+
+class Node {
+    constructor(value) {
+        this.value = value;
+        this.next = null;
+    }
+}
 
 
 class LinkedList {
@@ -148,6 +198,40 @@ class LinkedList {
         for (let i=0; i< index ; i++){
             temp =temp.next
         }
+        return temp;
+
+    }
+        /* insert-> insert a new node at a 
+        given index
+        */
+    insert(index,value) {
+        if(index===0) return this.unshift(value)
+        if(index===this.length) return this.push(value)
+        if(index <0 || index >this.length) return false;
+
+        const newNode = new Node(value)
+        let temp=this.get(index-1)
+
+        newNode.next=temp.next;
+        temp.next=newNode
+        this.length++
+        return true
+    }
+
+        /* remove-> removes a node at a 
+        given index
+        */
+    remove(index) {
+        if (index === 0) return this.shift()
+        if (index === this.length-1) return this.pop()
+        if (index < 0 || index > this.length) return undefined;
+
+        let before = this.get(index-1)
+        let temp = before.next;
+
+        before.next=temp.next;
+        temp.next=null;
+        this.length--
         return temp;
 
     }
