@@ -24,8 +24,6 @@ Constraints:
     You are not allowed to use any additional data structures (such as arrays) or modify the existing data structure.
 
     You can only traverse the linked list once.
-
-
 */
 
 
@@ -51,28 +49,6 @@ class LinkedList {
         }
     }
 
-    getHead() {
-        if (this.head === null) {
-            console.log("Head: null");
-        } else {
-            console.log("Head: " + this.head.value);
-        }
-    }
-
-    getTail() {
-        if (this.tail === null) {
-            console.log("Tail: null");
-        } else {
-            console.log("Tail: " + this.tail.value);
-        }
-    }
-
-    makeEmpty() {
-        this.head = null;
-        this.tail = null;
-        this.length = 0;
-    }
-
     push(value) {
         const newNode = new Node(value);
         if (!this.head) {
@@ -84,7 +60,7 @@ class LinkedList {
         }
     }
 
-    
+
     findMiddleNode() {
         /*
         findMiddleNode() function uses the "tortoise and hare" algorithm to find the middle node of a linked list. 
