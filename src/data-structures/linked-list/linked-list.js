@@ -59,41 +59,7 @@ class LinkedList {
         this.length = 1;
     }
 
-    printList() {
-        let temp = this.head;
-        while (temp !== null) {
-            console.log(temp.value);
-            temp = temp.next;
-        }
-    }
-
-    getHead() {
-        if (this.head === null) {
-            console.log("Head: null");
-        } else {
-            console.log("Head: " + this.head.value);
-        }
-    }
-
-    getTail() {
-        if (this.tail === null) {
-            console.log("Tail: null");
-        } else {
-            console.log("Tail: " + this.tail.value);
-        }
-    }
-
-    getLength() {
-        console.log("Length: " + this.length);
-    }
-
-    makeEmpty() {
-        this.head = null;
-        this.tail = null;
-        this.length = 0;
-    }
-
-    // Below methods are the actual methods for the Linked list 
+    // Below methods are the required methods for the Linked list 
     push(value) {
         /* push-> add a new node to the linked list at 
         the end.
@@ -235,8 +201,7 @@ class LinkedList {
         return temp;
 
     }
-
-     
+  
     reverse() {
     // reverse-> reverses a LL 
         let temp = this.head;
@@ -256,6 +221,42 @@ class LinkedList {
 
         return this;
 
+    }
+
+
+    // Below methods are the util methods for LL
+    printList() {
+        let temp = this.head;
+        while (temp !== null) {
+            console.log(temp.value);
+            temp = temp.next;
+        }
+    }
+
+    getHead() {
+        if (this.head === null) {
+            console.log("Head: null");
+        } else {
+            console.log("Head: " + this.head.value);
+        }
+    }
+
+    getTail() {
+        if (this.tail === null) {
+            console.log("Tail: null");
+        } else {
+            console.log("Tail: " + this.tail.value);
+        }
+    }
+
+    getLength() {
+        console.log("Length: " + this.length);
+    }
+
+    makeEmpty() {
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
     }
 }
 
@@ -286,6 +287,7 @@ function test() {
     console.log("\nLinked List:");
     myLinkedList.printList();
     myLinkedList.reverse();
+    console.log("\nReversed Linked List:");
     myLinkedList.printList();
 }
 
