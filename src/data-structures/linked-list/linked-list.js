@@ -93,7 +93,7 @@ class LinkedList {
         this.length = 0;
     }
 
-
+    // Below methods are the actual methods for the Linked list 
     push(value) {
         /* push-> add a new node to the linked list at 
         the end.
@@ -153,16 +153,16 @@ class LinkedList {
         if (!this.head) {
             this.head = newNode;
             this.tail = newNode;
-        }else{
+        } else {
             newNode.next = this.head;
             this.head = newNode;
         }
         this.length++;
         return this;
-        
+
     }
 
-    shift(){
+    shift() {
         /* shift-> removes a node from the linked list at 
         the start.
         shift is a O(1) operation 
@@ -173,66 +173,88 @@ class LinkedList {
 
 
         //if there are 2 or more nodes in the list
-        let temp= this.head;
+        let temp = this.head;
         this.head = this.head.next;
 
-        temp.next= null;
+        temp.next = null;
         this.length--;
 
         //if there is only one node in the list
-        if (this.length===0){
-            this.tail=null;
+        if (this.length === 0) {
+            this.tail = null;
         }
         return temp;
 
     }
 
-    get(index){
+    get(index) {
         /* get-> gets a node from the a particular
         index
         */
-        if(index < 0 || index >= this.length) return undefined;
+        if (index < 0 || index >= this.length) return undefined;
 
         let temp = this.head;
 
-        for (let i=0; i< index ; i++){
-            temp =temp.next
+        for (let i = 0; i < index; i++) {
+            temp = temp.next
         }
         return temp;
 
     }
-        /* insert-> insert a new node at a 
+   
+    insert(index, value) {
+    /* insert-> insert a new node at a 
         given index
-        */
-    insert(index,value) {
-        if(index===0) return this.unshift(value)
-        if(index===this.length) return this.push(value)
-        if(index <0 || index >this.length) return false;
+    */
+        if (index === 0) return this.unshift(value)
+        if (index === this.length) return this.push(value)
+        if (index < 0 || index > this.length) return false;
 
         const newNode = new Node(value)
-        let temp=this.get(index-1)
+        let temp = this.get(index - 1)
 
-        newNode.next=temp.next;
-        temp.next=newNode
+        newNode.next = temp.next;
+        temp.next = newNode
         this.length++
         return true
     }
 
-        /* remove-> removes a node at a 
-        given index
-        */
+    
     remove(index) {
+    // remove-> removes a node at a given index
         if (index === 0) return this.shift()
-        if (index === this.length-1) return this.pop()
+        if (index === this.length - 1) return this.pop()
         if (index < 0 || index > this.length) return undefined;
 
-        let before = this.get(index-1)
+        let before = this.get(index - 1)
         let temp = before.next;
 
-        before.next=temp.next;
-        temp.next=null;
+        before.next = temp.next;
+        temp.next = null;
         this.length--
         return temp;
+
+    }
+
+     
+    reverse() {
+    // reverse-> reverses a LL 
+        let temp = this.head;
+        this.head = this.tail;
+        this.tail = temp;
+
+        let next = temp.next;
+        let prev = null;
+
+
+        for (let i = 0; i < this.length; i++) {
+            next = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = next;
+        }
+
+        return this;
 
     }
 }
@@ -246,7 +268,7 @@ function test() {
     myLinkedList.push(4);
 
     myLinkedList.pop();
-    
+
     myLinkedList.unshit(0);
     myLinkedList.unshit(-1);
     myLinkedList.unshit(-2);
@@ -256,12 +278,14 @@ function test() {
     myLinkedList.shift();
     myLinkedList.shift();
 
-    console.log('Element at index is: '+myLinkedList.get(2).value);
+    console.log('Element at index is: ' + myLinkedList.get(2).value);
 
     myLinkedList.getHead();
     myLinkedList.getTail();
     myLinkedList.getLength();
     console.log("\nLinked List:");
+    myLinkedList.printList();
+    myLinkedList.reverse();
     myLinkedList.printList();
 }
 
