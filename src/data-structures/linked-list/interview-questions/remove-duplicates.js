@@ -25,12 +25,12 @@ The linked list should now have the following values: 1 -> 2 -> 3 -> 4
 */
 
 class Node {
-    constructor(value){
+    constructor(value) {
         this.value = value;
         this.next = null;
     }
 }
- 
+
 class LinkedList {
     constructor(value) {
         const newNode = new Node(value);
@@ -54,21 +54,21 @@ class LinkedList {
         }
     }
 
-	push(value) {
-		const newNode = new Node(value);
-		if (!this.head) {
-			this.head = newNode;
-		} else {
-			let current = this.head;
-			while (current.next !== null) {
-				current = current.next;
-			}
-			current.next = newNode;
-		}
-		this.length++;
-	}
-	
-	removeDuplicates(){
+    push(value) {
+        const newNode = new Node(value);
+        if (!this.head) {
+            this.head = newNode;
+        } else {
+            let current = this.head;
+            while (current.next !== null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+        this.length++;
+    }
+
+    removeDuplicates() {
         /*
     Hstep-by-step explanation of the logic:
 
@@ -83,23 +83,23 @@ class LinkedList {
         c. Move the current pointer to the next node.
 
         */
-	    const values = new Set();
-	    let previous=null
-	    let current=this.head;
-	    
-	    while (current!==null){
-	        if(values.has(current.value)){
-	            previous.next = current.next
-	            this.length-=1;
-	        }else{
-	             values.add(current.value)
-	             previous=current
-	        }
-	        current=current.next
-	       
-	    }
-	    
-	}
+        const values = new Set();
+        let previous = null
+        let current = this.head;
+
+        while (current !== null) {
+            if (values.has(current.value)) {
+                previous.next = current.next
+                this.length -= 1;
+            } else {
+                values.add(current.value)
+                previous = current
+            }
+            current = current.next
+
+        }
+
+    }
 
 }
 

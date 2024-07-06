@@ -167,11 +167,11 @@ class LinkedList {
         return temp;
 
     }
-   
+
     insert(index, value) {
-    /* insert-> insert a new node at a 
-        given index
-    */
+        /* insert-> insert a new node at a 
+            given index
+        */
         if (index === 0) return this.unshift(value)
         if (index === this.length) return this.push(value)
         if (index < 0 || index > this.length) return false;
@@ -185,9 +185,9 @@ class LinkedList {
         return true
     }
 
-    
+
     remove(index) {
-    // remove-> removes a node at a given index
+        // remove-> removes a node at a given index
         if (index === 0) return this.shift()
         if (index === this.length - 1) return this.pop()
         if (index < 0 || index > this.length) return undefined;
@@ -201,9 +201,9 @@ class LinkedList {
         return temp;
 
     }
-  
+
     reverse() {
-    // reverse-> reverses a LL 
+        // reverse-> reverses a LL 
         let temp = this.head;
         this.head = this.tail;
         this.tail = temp;
