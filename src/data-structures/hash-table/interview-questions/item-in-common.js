@@ -40,5 +40,31 @@ function solutionWithObject(arr1, arr2) {
 }
 
 
-console.log("Solution with objects/inbuilt hash table: ");
+console.log("Solution with JS Objects: ");
 console.log(solutionWithObject([1, 3, 5], [2, 4, 2]));
+
+
+
+
+
+// Solution with JS Map. 
+// Time complexity is O(n)
+function solutionWithJSMap(arr1, arr2){
+    const mapArr1 = new Map();
+    
+    for(let i of arr1){
+        mapArr1.set(i,true);
+    }
+    console.log(mapArr1);
+    
+    for(let j of arr2){
+        if(mapArr1.has(j)) return true;
+    }
+    return false;
+    
+}
+
+
+
+console.log("Solution with JS MAP: ");
+console.log(solutionWithJSMap([1, 3, 5], [2, 5, 5]));
