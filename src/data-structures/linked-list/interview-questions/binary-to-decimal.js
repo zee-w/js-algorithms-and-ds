@@ -44,23 +44,6 @@ class LinkedList {
         console.log(output);
     }
 
-    getHead() {
-        if (this.head === null) {
-            console.log("Head: null");
-        } else {
-            console.log("Head: " + this.head.value);
-        }
-    }
-
-    getLength() {
-        console.log("Length: " + this.length);
-    }
-
-    makeEmpty() {
-        this.head = null;
-        this.length = 0;
-    }
-
     push(value) {
         const newNode = new Node(value);
         if (!this.head) {
