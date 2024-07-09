@@ -3,13 +3,26 @@ Example 1:
 
 Suppose you have a LinkedList object, list, with the following values:
 1 -> 2 -> 3 -> 4 -> 5
+
+
+After calling the findMiddleNode() function:
+
+    let middle = list.findMiddleNode();
+
 The middle node should have the value 3.
+
 
 
 Example 2:
 
 Now suppose you have a LinkedList object, list, with the following values:
 1 -> 2 -> 3 -> 4 -> 5 -> 6
+
+
+After calling the findMiddleNode() function:
+
+    let middle = list.findMiddleNode();
+
 The middle node should have the value 4.
 
 Output:

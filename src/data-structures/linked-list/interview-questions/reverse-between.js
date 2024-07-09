@@ -1,3 +1,53 @@
+/*
+Implement a member function called reverseBetween(m, n) that reverses the nodes between indexes (using 0-based indexing)  m and n (inclusive) in the linked list.
+
+Note: this linked list class does NOT have a tail which will make this method easier to implement.
+
+Assumption: You can assume that m and n are not out of bounds.
+
+
+Output:
+
+    The function should reverse the nodes between the indexes m and n in the linked list. The reversal should be done in-place.
+
+
+Constraints:
+
+    You are not allowed to use any additional data structures (such as arrays) or modify the existing data structure.
+
+    You can only traverse the linked list once.
+
+
+
+Example 1:
+
+Suppose you have a LinkedList object, list, with the following values:
+1 -> 2 -> 3 -> 4 -> 5
+
+
+After calling the reverseBetween(1, 3) function:
+
+    list.reverseBetween(1, 3);
+
+The linked list should now have the following values:
+1 -> 4 -> 3 -> 2 -> 5
+
+
+
+Example 2:
+
+Now suppose you have a LinkedList object, list, with the following values:
+1 -> 2 -> 3 -> 4 -> 5 -> 6
+
+
+After calling the reverseBetween(3, 5) function:
+
+    list.reverseBetween(3, 5);
+
+The linked list should now have the following values:
+1 -> 2 -> 3 -> 6 -> 5 -> 4
+*/
+
 class Node {
     constructor(value) {
         this.value = value;
