@@ -93,7 +93,6 @@ class LinkedList {
         this.length++;
     }
 
-    reverseBetween(m, n) {
         /*
         Here's a step-by-step explanation of the logic:
 
@@ -114,30 +113,54 @@ class LinkedList {
     6. After the loop, the portion of the linked list between positions m and n has been reversed. Set the head of the linked list to the next pointer of the dummy node.
       */
 
+
+    // Function to reverse nodes in a linked list between positions m and n (0-based index)
+    reverseBetween(m, n) {
+        // Check if the list is empty. If it is, no action is needed.
         if (this.head === null) return;
-
+     
+        // Create a dummy node. This is a common technique used in linked list problems
+        // to simplify edge cases, like when modifying the head of the list.
         const dummy = new Node(0);
+     
+        // Link this dummy node to the head of the list.
+        // Now, dummy acts as a precursor to the head node.
         dummy.next = this.head;
+     
+        // 'prev' will eventually point to the node just before the start of the reversal.
+        // Initially, 'prev' is set to the dummy node.
         let prev = dummy;
-
+     
+        // Iterate to position 'prev' to the node just before where reversal begins.
+        // Since indices are 0-based, this loop moves 'prev' 'm' nodes forward.
         for (let i = 0; i < m; i++) {
             prev = prev.next;
         }
-
+     
+        // 'current' points to the first node that will be reversed.
+        // This is the mth node in the list (considering 0-based indexing).
         let current = prev.next;
+     
+        // The loop for the actual reversal of the segment between m and n.
+        // It runs (n - m) times, moving each node in turn to the position after 'prev'.
         for (let i = 0; i < n - m; i++) {
+            // 'temp' temporarily stores the next node in line to be moved.
             const temp = current.next;
+     
+            // Bypass 'temp' in the current positioning.
             current.next = temp.next;
+     
+            // Insert 'temp' between 'prev' and 'prev.next'.
+            // This step effectively moves 'temp' to the front of the reversal segment.
             temp.next = prev.next;
             prev.next = temp;
         }
-
+     
+        // Update the head of the list if the head was part of the reversal.
+        // This is where the dummy node becomes useful, as it simplifies this operation.
         this.head = dummy.next;
     }
-
 }
-
-
 
 let myLinkedList = new LinkedList(1);
 myLinkedList.push(2);
