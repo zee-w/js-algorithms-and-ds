@@ -5,7 +5,9 @@
 Length of the longest substring with consecutive characters
 Last Updated : 22 Feb, 2023
 
-Given string str of lowercase alphabets, the task is to find the length of the longest substring of characters in alphabetical order i.e. string “dfabck” will return 3. Note that the alphabetical order here is considered circular i.e. a, b, c, d, e, …, x, y, z, a, b, c, ….
+Given string str of lowercase alphabets, the task is to find the length of the 
+longest substring of characters in alphabetical order i.e. string “dfabck” will return 3. 
+Note that the alphabetical order here is considered circular i.e. a, b, c, d, e, …, x, y, z, a, b, c, ….
  
 
 Examples: 
