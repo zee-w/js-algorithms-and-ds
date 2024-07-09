@@ -1,15 +1,10 @@
-const myObj={
-    name:'Zeeshan'
-}
-
-const myObj2={
-    name:'Shama',
-    printName: function(){
-        console.log(this.name)
-    }
-}
+const isSummer = true;
+const fruits = {
+  apple: 10,
+  banana: 5,
+  ...(isSummer ? { watermelon: 30 } : {}),
+};
 
 
-const test=myObj2.printName.call(myObj)
 
-
+console.log(fruits)

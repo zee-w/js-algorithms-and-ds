@@ -23,6 +23,14 @@ Example 2:
 
 Here, even though the numbers are not in order, they still form a consecutive sequence when arranged. So the length is 5.
 
+Example 3:
+
+    Input: [2, 1, 4, 7, 3]
+
+    Output: 4
+
+In this example, when arranged in order, the numbers 1, 2, 3, and 4 form a consecutive sequence. So, the length is 4.
+
 */
 
 
